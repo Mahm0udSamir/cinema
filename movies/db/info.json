@@ -1,0 +1,183 @@
+[{
+         "id":1,
+         "about":{
+            "id":1,
+            "title":"Pulp Fiction",
+            "year":"1980",
+            "type":"Action",
+            "director":"Quentin Tarantino",
+            "rating":5,
+            "img":"1.jpg",
+            "desc":"Suspendisse vel aliquet massa. Donec tristique sem erat. Mauris ipsum ante, interdum vitae nulla eu, mollis eleifend lectus. Pellentesque eget nibh et velit efficitur suscipit. Maecenas in sapien non ipsum convallis.",
+            "cinma":[{ 
+                "id_cinma":1,
+                "about_cinma":{
+                    "name":"El Horya",
+                    "capacity":"full",
+                    "img":"1.jpg",
+                    "chair":{
+                        "a1":true,
+                        "a2":true,
+                        "a3":true,
+                        "a4":false,
+                        "b1":true,
+                        "b2":false,
+                        "b3":true
+
+                    }
+                 }
+            },{ 
+                "id_cinma":2,
+                "about_cinma":{
+                    "name":"El Horya",
+                    "capacity":"full",
+                    "img":"1.jpg",
+                    "a":"1",
+                    "chair":{
+                        "a":1,
+                        "2":true,
+                        "3":true,
+                        "4":true,
+                        "5":true,
+                        "6":true,
+                        "7":true,
+                        "8":true,
+                        "9":true
+
+                    }
+                 }
+            }]
+          }},
+         {
+         "id":2,
+         "about":{
+            "id":2,
+            "title":"Suicide Squad",
+            "year":"2016",
+            "type":"Comics",
+            "director":"Ron Woods",
+            "rating":3,
+            "img":"2.jpg",
+            "desc":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor elit libero, nec dictum leo fringilla non. Donec viverra tempus erat vitae maximus. Aenean condimentum nec nulla eu egestas."
+          }},
+          {
+          "id":3,
+         "about":{
+            "id":3,
+            "title":"Star Wars",
+            "year":"2016",
+            "type":"Sci-Fi",
+            "director":"George Lucas",
+            "rating":4,
+            "img":"3.jpg",
+            "desc":"Cras a tortor pellentesque, interdum libero vel, hendrerit nunc. Donec aliquam nisi nunc, nec fringilla ante auctor a. Aliquam venenatis vitae neque quis convallis. Duis hendrerit, urna nec congue ultrices, felis orci rutrum orci, id finibus leo mi id elit."
+          }},
+          {
+          "id":4,
+          "about":{
+            "id":4,
+            "title":"La-la-land",
+            "year":"2017",
+            "type":"Musical",
+            "director":"Jason Borges",
+            "rating":3,
+            "img":"4.jpg",
+            "desc":"Suspendisse vel aliquet massa. Donec tristique sem erat. Mauris ipsum ante, interdum vitae nulla eu, mollis eleifend lectus. Pellentesque eget nibh et velit efficitur suscipit. Maecenas in sapien non ipsum convallis."
+          }},
+          {
+          "id":5,
+         "about":{
+            "id":5,
+            "title":"Last Samurai",
+            "year":"2005",
+            "type":"Action",
+            "director":"Oliver Atom",
+            "rating":4,
+            "img":"5.jpg",
+            "desc":"Cras a tortor pellentesque, interdum libero vel, hendrerit nunc. Donec aliquam nisi nunc, nec fringilla ante auctor a. Aliquam venenatis vitae neque quis convallis. Duis hendrerit, urna nec congue ultrices, felis orci rutrum orci, id finibus leo mi id elit."
+          }},
+          {
+          "id":6,
+         "about":{
+            "id":6,
+            "title":"Man on fire",
+            "year":"2002",
+            "type":"Action",
+            "director":"Denzel Washington",
+            "rating":2,
+            "img":"6.jpg",
+            "desc":"Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur."
+          }},
+          {
+          "id":7,
+          "about":{
+            "id":7,
+            "title":"No country for old men",
+            "year":"2004",
+            "type":"Drama",
+            "director":"Joe Satriani",
+            "rating":5,
+            "img":"7.jpg",
+            "desc":"Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam."
+          }},
+          {
+          "id":8,
+          "about":{
+            "id":8,
+            "title":"Tropic Thunder",
+            "year":"2008",
+            "type":"Action",
+            "director":"Monty Phyton",
+            "rating":1,
+            "img":"8.jpg",
+            "desc":"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt."
+          }},
+          {
+          "id":9,
+          "about":{
+            "id":9,
+            "title":"Robocop",
+            "year":"1990",
+            "type":"Action",
+            "director":"Mark Thompson",
+            "rating":4,
+            "img":"9.jpg",
+            "desc":"Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. "
+          }},
+          {
+          "id":10,
+          "about":{
+            "id":10,
+            "title":"Kill Bill",
+            "year":"2005",
+            "type":"Action",
+            "director":"Quentin Tarantino",
+            "rating":4,
+            "img":"10.jpg",
+            "desc":"Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam."
+          }},
+          {
+          "id":11,
+          "about":{
+            "id":11,
+            "title":"Dumb and dumber",
+            "year":"2000",
+            "type":"Comedy",
+            "director":"Dennis Quiad",
+            "rating":3,
+            "img":"11.jpg",
+            "desc":"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt."
+          }},
+          {
+          "id":12,
+          "about":{
+            "id":12,
+            "title":"Fight Club",
+            "year":"2004",
+            "type":"Action",
+            "director":"David Fincher",
+            "rating":4,
+            "img":"12.jpg",
+            "desc":"Suspendisse vel aliquet massa. Donec tristique sem erat. Mauris ipsum ante, interdum vitae nulla eu, mollis eleifend lectus. Pellentesque eget nibh et velit efficitur suscipit. Maecenas in sapien non ipsum convallis."
+          }}
+        ];

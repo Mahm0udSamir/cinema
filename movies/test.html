@@ -1,0 +1,24 @@
+<html>
+<head>
+    
+     <script src="js/angular.1.6.min.js"></script> 
+    <script>
+        angular.module('testapp', []);
+        
+         function getAllMovies($scope, $http) {
+                $scope.movies = [];
+                $http.get("http://localhost/db/info.json").then(function (response) {
+
+                    $scope.movies = response.data;
+                })
+         }
+        angular.module('testapp').controller("getAllMovies", getAllMovies);
+    </script>
+</head>
+<body ng-app="testapp">
+    <div ng-controller="getAllMovies">
+        {{movies}}
+    </div>
+    
+</body>
+</html>

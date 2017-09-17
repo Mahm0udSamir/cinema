@@ -1,0 +1,93 @@
+<!--<div  class="container">
+        <ul class="movies">
+            <li><img src="images/movies/{{myFilm.img}}"></li>
+            <li>{{myFilm.id}}</li>
+            <li>{{myFilm.title}}</li>
+            <li>{{myFilm.year}}</li>
+            <li>{{myFilm.type}}</li>
+            <li>{{myFilm.director}}</li>
+            <li>{{myFilm.rating}}</li>
+            <li>{{m.desc}}</li>
+         </ul>    
+        
+        welcome
+    </div>-->
+
+<div class="container ">
+  <div class="col-xs-12">
+  <div id="about" >
+         <div class="col-sm-4 col-xs-12">
+           <img src="images/movies/{{myFilm.img}}">
+        </div>
+       <div class="col-sm-8">
+         <h2>{{myFilm.title}}</h2>
+         <div>
+            <span>Year : </span>{{myFilm.year}}<br>
+            <span>Type : </span>{{myFilm.type}}<br>
+            <span>Director : </span>{{myFilm.director}}<br>
+            
+             <div id="rating"><span>Rate : </span>
+                 <li class="star" ng-repeat="Star in [1,2,3,4,5]">
+                        <div ng-switch=" {{myFilm.rating}}>= Star">
+                            <div ng-switch-when="true">
+                                <img src="images/star.png" class="star" />
+                            </div>
+                            <div ng-switch-when="false">
+                                <div ng-switch="{{myFilm.rating}} > (Star-1)">
+                                    <div ng-switch-when="true">
+                                        <img src="images/Star-Half.png" class="star" />
+                                    </div>
+                                    <div ng-switch-when="false">
+                                        <img src="images/empty.png" class="star" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+             </div><br>
+           <span>Description : </span>{{myFilm.desc}} 
+           <span > </span>
+        </div>
+       </div>
+
+    
+  </div>
+</div>    
+</div>
+
+
+
+<div class="container" id="down">
+   
+    
+    <div class="col-md-6 cinma" >
+       <a href="#!/cinma/{{myFilm.id}}/1" ng-click="hide_nave()">
+          <div >
+            <img src="images/cinma/1.jpg" alt="Norway" style="width:100%">
+            <h2>El Horya</h2>
+          </div>
+      </a>
+      <div   ng-show='getCapacity(0)' class="hiden col-xs-12"><h2>Full</h2></div>
+    </div>
+    
+    
+   
+    <div class="col-md-6 cinma" >
+       <a href="#!/cinma2/{{myFilm.id}}/2" ng-click="hide_nave()">
+           <div >
+            <img src="images/cinma/2.jpg" alt="Norway" style="width:100%">
+            <h2>Donia</h2>
+          </div>
+      </a>
+      <div  ng-show='getCapacity(1)' class="hiden col-xs-12"><h2>Full</h2></div>
+    </div>
+   
+    
+   
+
+
+</div>
+
+
+<!--<div class="col-lg-5" ng-click="hide_nave()"><a href="#!/cinma/{{myFilm.id}}/1"><img src="images/cinma/1.jpg"> </a></div>
+<div class="col-lg-5" ng-click="hide_nave()"><a href="#!/cinma2/{{myFilm.id}}/2"><img src="images/cinma/2.jpg"> </a></div>-->

@@ -1,0 +1,163 @@
+/*start style for aboutmov*/
+
+
+#about div.col-sm-4 img{
+    width: 92%;
+    height:302px;
+    border-radius: 50%;
+    box-shadow: 0 0 17px 1px #FFF;
+    
+    
+     position: relative;
+    /*animation-name: example;*/
+    /*animation-duration: 1s; 
+    animation-iteration-count:1*/
+    animation: example 1s linear  ;
+}
+
+
+
+@keyframes example {
+    
+    0%   {transform: rotateZ(0deg); left:-200px; top:0px;}
+    25%  {transform: rotateZ(90deg); left:20px; top:0;}
+    50%  {transform: rotateZ(180deg);}
+    75%  {transform: rotateZ(270deg); left:-30px; top:0;}
+    100% {transform: rotateZ(360deg); left:0px; top:0;}
+
+    /* 0%  { left:-200px; top:0px;}
+     50%  { left:20px; top:0;}
+     75%  { left:-30px; top:0;}
+     100%  { left:0px; top:0;}*/
+   }
+#about {
+  position: relative;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 50% / 11%;
+  color: #f0f0f0;
+  font-size: 17px;
+  padding: 14px;
+  margin-top: 66px;
+  margin-bottom: 20px;
+  box-shadow: 0px 0px 20px 2px #030303;
+}
+#about:before {
+  content: '';
+  position: absolute;
+  top: 9%;
+  bottom: 9%;
+  right: -5%;
+  left: -5%;
+  background: rgba(0, 0, 0, 0.88); /*rgb(43, 168, 190);*/
+  border-radius: 5% / 50%;
+}
+
+#about h2{
+    color: #27e9ff;
+    padding-top: 18px;
+}
+#about   span{
+    color: #FFF;
+    font-weight: bold
+}
+#about div p div span{
+    font-weight: bold
+}
+ #rating{
+    /*margin-top: -9px;*/
+    margin-bottom: -21px;
+}
+
+#about div.col-sm-8{
+    
+   position: relative;
+    animation-name: moveright;
+    animation-duration: 1s;
+    animation-iteration-count:1
+    
+}
+
+@keyframes moveright {
+    
+     0%   { left:200px; top:0px;}
+     50%  { left:-20px; top:0;}
+     75%  { left:30px; top:0;}
+     100% { left:0px; top:0;}
+    
+   }
+
+
+
+/*end aboutmov*/
+
+/*cinma*/
+
+.cinma:hover{background: #FFF;}
+
+.cinma{
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 14px 0px #000;
+    border-radius: 3%;
+    padding: 0 20px 9px;
+    background:  rgba(255, 255, 255, 0);
+}
+
+.cinma h2{
+    border-radius: 9px;
+    font-size: 25px;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.88);
+    padding: 13px;
+}
+.cinma img{
+    height:351px;
+}
+.cinma a{
+    text-decoration: none
+}
+
+
+.hiden{
+   height: 100%;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    top: 0;
+    left: 0;
+}
+.hiden h2{
+    color: #fff;
+    background: rgba(255, 255, 255, 0);
+    margin-top: 0%;
+    text-align: center;
+}
+
+
+
+
+
+
+/**/
+@media(max-width:767px){
+    
+    #about:before{       
+        background: rgba(0, 0, 0, 0);
+    } 
+    #about h2{font-size: 28px;}
+    #about {
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0.45);
+        font-size: 16px;
+
+    }
+    #about div.col-sm-4 img {
+       
+        width: 100%;
+        margin-bottom: 18px;
+    }
+    .cinma{
+      background:  rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 0px 20px 2px #030303;
+
+    }
+}

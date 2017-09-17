@@ -1,0 +1,175 @@
+.theater{
+    background: rgba(136, 83, 67, 0.69)
+}
+.theater div div {
+    padding: 0;
+    background: rgba(116, 67, 55, 0.77);
+   
+
+}
+.theater > div {
+    transform: rotate(1deg);
+    margin-top: 333px;
+    
+}
+
+.theater > div div:first-of-type {
+    margin-left: 44%;
+    height: 43px;
+    width: 6%;
+}
+.theater > div div:nth-of-type(2) {
+    margin-left: 1.4%;
+    height: 43px;
+    width: 6.7%;
+}
+
+.theater > div div:nth-of-type(3) {
+    margin-left: 0.1%;
+    height: 43px;
+    width: 7.5%;
+}
+
+.theater > div div:nth-of-type(4) {
+    width: 8%;
+    height: 43px;
+}
+
+.theater .row2 {
+    margin-top: 418px;
+    padding-left: 10%;
+    transform: rotate(5.1deg);
+}
+
+.theater .row2 div:first-of-type {
+    margin-left: 19%;
+    width: 8%;
+    height: 63px;
+}
+
+.theater .row2 div:nth-of-type(2) {
+    width: 10%;
+    height: 62px;
+    margin-left: 3%;
+}
+
+.theater .row2 div:nth-of-type(3) {
+    margin-left: 0.5%;
+    height: 63px;
+    width: 11%;
+}
+
+.theater .row2 div:nth-of-type(4) {
+    margin-left: 5%;
+    height: 61px;
+    width: 13%;
+}
+
+
+
+@media (max-width: 768px){
+    
+    .theater div div{
+        padding: 0
+    }
+    .theater > div {
+        font-size: 11px;
+    }
+    
+    .theater .row2{
+         font-size: 12px;
+       
+    }
+   
+    .theater > div div:first-of-type{
+        margin-left: 43%;
+        
+    }
+    .theater > div div:nth-of-type(2){
+
+            margin-left: 1.2%;
+
+    }
+    .theater > div div:nth-of-type(3){
+            margin-left: 0%;
+    }
+    .theater > div div:nth-of-type(4){
+            margin-left: 2%;
+    }
+
+
+    .theater .row2 div:first-of-type{
+        margin-left: 18%;
+        height: 52px;
+
+    }
+    .theater .row2 div:nth-of-type(2){
+        margin-left: 3%;
+        height: 57px
+    }
+    .theater .row2 div:nth-of-type(3){
+        margin-left: 0%;
+        height: 60px
+
+    }
+    .theater .row2 div:nth-of-type(4) {
+        margin-left: 3.1%;
+   }
+}
+
+
+@media(max-width: 400px){
+    .theater div div{
+       
+        padding: 0;
+    }
+     .theater > div {
+        font-size: 10px;
+    }
+    
+    .theater .row2{
+         font-size: 11px;
+        transform: rotate(11.1deg);
+    }
+
+    .theater > div div:first-of-type{
+        margin-left: 31%;
+        width: 11%;
+    }
+    .theater > div div:nth-of-type(2){
+
+        margin-left: 0%;
+        width: 11%
+
+    }
+    .theater > div div:nth-of-type(3){
+
+         margin-left: 0%;
+         width: 11%
+    }
+    .theater > div div:nth-of-type(4){
+
+        margin-left: 0%;
+        width: 11%
+    }
+
+
+    .theater .row2 div:first-of-type{
+        margin-left: 13%;
+        width: 12%
+
+    }
+    .theater .row2 div:nth-of-type(2){
+        margin-left: 0%;
+        width: 12%
+    }
+    .theater .row2 div:nth-of-type(3){
+        margin-left: -1%;
+        width: 12%
+
+    }
+    .theater .row2 div:nth-of-type(4){
+        margin-left: 1%;
+
+    }
+}

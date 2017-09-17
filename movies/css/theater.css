@@ -1,0 +1,173 @@
+*{
+    box-sizing: border-box
+}
+.theater-blur{
+    background: rgba(252, 205, 127, 0.62);
+    width: 100%;
+    height: 703px;
+    position: fixed;
+    z-index: -1;
+}
+div.theater{
+    height: 703px;
+    position: relative;
+}
+div img{
+    width: 100%;
+    height: 100%
+}
+.theater > div{
+    margin-top: 257px;
+    position: absolute;
+    z-index: 1;
+    width: 88%
+   
+}
+.theater div div{
+    color: #FFF;
+    padding: 0;
+    background: rgba(119, 69, 34, 0.59);
+    height: 52px;
+    display: inline-block;
+    cursor: pointer
+}
+.theater div div:hover{background: rgba(7, 8, 5, 0.3)}
+
+.theater > div div:first-of-type{
+    margin-left: 19%;
+    height: 63px;
+    width: 13%;
+}
+.theater > div div:nth-of-type(2){
+       
+        margin-left: 3%;
+        width: 11%;
+
+}
+.theater > div div:nth-of-type(3){
+    
+        margin-left: 1.3%;
+        width: 10%;
+
+
+}
+.theater > div div:nth-of-type(4){
+    
+        margin-left: 2%;
+        width: 10%;
+        height: 49px
+
+
+}
+
+
+.theater .row2{
+    transform: rotate(-4deg);
+    margin-top: 317px;
+    padding-left: 19%;
+}
+
+.theater .row2 div:first-of-type{
+    margin-left: 18%;
+    width: 21%;
+    height: 99px;
+}
+.theater .row2 div:nth-of-type(2){
+    width: 19%;
+    height: 90px;
+    margin-left: 6%;
+}
+.theater .row2 div:nth-of-type(3){
+    margin-left: 4%;
+    height: 82px;
+    width: 16%;
+}
+
+
+
+
+@media (max-width: 768px){
+    
+    .theater div div{
+        padding: 6px 1px;
+    }
+    .theater > div div:first-of-type{
+        margin-left: 19%;
+    }
+    .theater > div div:nth-of-type(2){
+
+            margin-left: 1.2%;
+
+    }
+    .theater > div div:nth-of-type(3){
+
+            margin-left: 1%;
+    }
+    .theater > div div:nth-of-type(4){
+
+            margin-left: 2%;
+    }
+
+
+    .theater .row2 div:first-of-type{
+        margin-left: 17%;
+
+    }
+    .theater .row2 div:nth-of-type(2){
+        margin-left: 4%;
+    }
+    .theater .row2 div:nth-of-type(3){
+        margin-left: 4%;
+
+    }
+}
+
+
+@media(max-width: 300px){
+    .theater div div{
+        font-size: 11px;
+        padding: 0;
+    }
+    .theater > div div:first-of-type{
+        margin-left: 17%;
+    }
+    .theater > div div:nth-of-type(2){
+
+            margin-left: 1%;
+
+    }
+    .theater > div div:nth-of-type(3){
+
+            margin-left: 0%;
+    }
+    .theater > div div:nth-of-type(4){
+
+            margin-left: 0%;
+    }
+
+
+    .theater .row2 div:first-of-type{
+        margin-left: 13%;
+
+    }
+    .theater .row2 div:nth-of-type(2){
+        margin-left: 2%;
+    }
+    .theater .row2 div:nth-of-type(3){
+        margin-left: 1%;
+
+    }
+}
+
+#close{
+    position: fixed;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 37px;
+    right: 44px;
+    top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#close:hover{
+    color: #FFF
+}

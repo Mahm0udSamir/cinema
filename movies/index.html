@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+       <!-- <link href="bootstrap.css" rel="stylesheet" />-->
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/SimpleStarRating.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/aboutMovStyle.css">
+        <link rel="stylesheet" href="css/theater.css">
+       
+       
+        <style>
+            /*.container{
+                width: 80%;
+                
+            }
+            .movies{
+                border: 1px solid #CCC; 
+                width: 25.66666%;
+                display: inline-block;
+            }*/
+            /*.movies img{
+                width: 200px;
+                height: 200px;
+            }*/
+          
+
+        
+        </style>
+          <script src="js/jquery-3.2.1.min.js"></script>
+      
+        <script src="js/angular.1.6.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        
+        <script src="js/servies.js"></script>
+       
+        <script>
+          
+            
+            
+            function getAllMovies($scope, customeService,  $routeParams) {
+               // $routeParams.typeName;
+                
+                
+                $scope.movies = customeService.getInfo(); /*$http.get("http://localhost/db/info.json").then(function (response) {
+
+                    $scope.movies = response.data;
+                })*/
+                
+                var category =["Action" ,"Sci-Fi", "Drama", "Comedy"];  
+                  $scope.complete = function(string){  
+                       $scope.hidethis = false;  
+                       var output = [];  
+                       angular.forEach(category, function(item){  
+                            if(item.toLowerCase().indexOf(string.toLowerCase()) >= 0)  
+                            {  
+                                 output.push(item);  
+                            }  
+                       });  
+                       $scope.filterType = output;  
+                  }  
+                  $scope.fillTextbox = function(string){  
+                       $scope.searchtext = string;  
+                       $scope.hidethis = true;  
+                  }
+                  
+                  $scope.input = $routeParams.typeName;
+                   $scope.display = function(){
+                       if($scope.searchtext == "" ||$scope.searchtext == null || $scope.searchtext== "  "){
+                           return true;
+                       }else{
+                           return false
+                       }
+                   }
+            
+            
+            
+            }
+                                                        
+            
+          /*  function getAllMovies($scope, customeService ){
+                $scope.movies = customeService.getInfo();
+            }*/ 
+            angular.module('myMovies').controller("getAllMovies", getAllMovies);
+            
+           /**/
+            function spacific1($scope, $routeParams, customeService){
+                
+                var id = $routeParams.movid;
+                $scope.id =id;
+                $scope.moves = customeService.getInfo();
+                $scope.getorders = function (id) {
+                    for(i=0;i<$scope.moves.length;i++){
+                        if($scope.moves[i].id==id){
+
+                         $scope.myFilm=  $scope.moves[i].about;
+                        }
+                    }
+               }
+                 $scope.getorders(id);
+               //$scope.myFilm = $scope.moves[0].about;
+                
+                $scope.getCapacity = function(index){
+                    
+                    
+                    var id = index;
+                    console.log(id)
+                    /*parseInt(angular.element($event.target).attr('index'));*/
+                    var length = $scope.myFilm.cinma[id].about_cinma.chair.length;
+                    console.log(length)
+                    var sum = 0;
+                    for(i=0; i<length; i++){
+                      var status = $scope.myFilm.cinma[id].about_cinma.chair[i].status;
+                        
+                      if(status == "close"){
+                          sum++;
+                      }
+                    }
+                     console.log(sum)
+                    if(sum == length){
+                        console.log("true");
+                        return true;
+                    }else{
+                        console.log("false");
+                           
+                        return false;
+                    }
+                    
+                   
+                    
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                $scope.hide_nave = function(){
+                    $(".navbar").hide();
+                }
+                
+                 $(".navbar").show();
+            }
+             angular.module('myMovies').controller("spacific1", spacific1);
+            /**/
+            
+            
+            
+            
+            
+            
+            
+            function theater($scope, $routeParams, customeService){
+                
+                $scope.id = $routeParams.movid;
+                var filmid = $routeParams.movid;
+                var theaterid = $routeParams.theaterid;
+               
+                $scope.moves =  customeService.getInfo();
+                
+                
+                $scope.getorders = function (id) {
+                    for(i=0;i<$scope.moves.length;i++){
+                      if($scope.moves[i].id==id){
+                         $scope.myFilm=  $scope.moves[i].about;
+                        }
+                    }
+                } 
+                $scope.geTheater = function (id) {
+                    for(i=0;i<$scope.myFilm.cinma.length;i++){
+                       if($scope.myFilm.cinma[i].id_cinma==id){
+                         $scope.theater=  $scope.myFilm.cinma[i];
+                        }
+                    }
+                    
+                }
+                $scope.getorders(filmid);
+                $scope.geTheater(theaterid);
+               
+                $scope.add = function($event){
+                  var id = parseInt(angular.element($event.target).attr('key'));
+                  var value = $event.target.textContent;
+                  
+                     $scope.geTheater(theaterid);
+               
+                    if(value == "open"){
+                        bootbox.confirm({
+                            message: "Would you like to confirm the seat reservation ?",
+                            buttons: {
+                                confirm: {
+                                    label: 'Yes',
+                                    className: 'btn-success'
+                                },
+                                cancel: {
+                                    label: 'No',
+                                    className: 'btn-danger'
+                                }
+                            },
+                            callback: function (result) {
+                                if(result){
+                                    $scope.theater.about_cinma.chair[id-1].status = "close" ;
+                                    $event.target.textContent = "close";
+                                }
+                                 
+                                
+                            }
+                        });
+                    }else{
+                        bootbox.alert(value);
+                    }
+                   
+
+                    
+                    
+                }
+                
+                
+                $scope.hide_nave = function(){
+                    $(".navbar").show();
+                }
+                
+              
+                
+                
+                
+               
+                
+            }
+
+            angular.module('myMovies').controller("theater", theater);
+            
+            angular.module('myMovies').filter("type", function(){
+                return function(movies, type_mov){
+                    type_mov = type_mov || "";
+                    arr = [];
+                    for(i=0; i<movies.length; i++){
+                        if(movies[i].about.type == type_mov) 
+                            arr.push(movies[i]);
+                    }
+                    return arr;
+                }
+            })
+            
+            
+            
+            
+            
+            angular.module('myMovies').config(['$routeProvider',function($routeProvider){
+                
+                
+                $routeProvider.when('/', {
+                    controller: 'getAllMovies',
+                    templateUrl: 'view/home.html'
+                });
+                $routeProvider.when('/search/:typeName', {
+                    controller: 'getAllMovies',
+                    templateUrl: 'view/allmovies.html'
+                });
+                $routeProvider.when('/:movid',{
+                    controller: 'spacific1',
+                    templateUrl: 'view/aboutMov.html'
+                })
+                $routeProvider.when('/cinma/:movid/:theaterid',{
+                    controller: 'theater',
+                    templateUrl: 'view/theater.html'
+                }) 
+                $routeProvider.when('/cinma2/:movid/:theaterid',{
+                    controller: 'theater',
+                    templateUrl: 'view/theater2.html'
+                })
+                 $routeProvider.otherwise({ redirectTo:'/'})
+                
+                
+                
+            }]);
+            
+            
+            
+            
+           
+            
+            
+      
+        </script>
+        <script src="js/SimpleStarRating.js"></script>
+
+
+                       
+        
+    </head>
+    <body ng-app="myMovies">
+        
+        <div class="body-bg">
+           <div id="whait"></div>
+        </div>
+        
+        <div class=" navbar navbar-default" >
+            
+            
+           <div class="col-lg-1 col-md-2 col-xs-2 ">
+                <div type="button" class="menu" ng-click="visible=!visible" >
+                  <span class="glyphicon glyphicon glyphicon-align-justify" ></span>
+               </div>
+           </div>
+            
+            
+            <div class="col-lg-2 col-md-2 col-xs-3 logo">
+                <img src="images/logo00.PNG" ng-show="visible">
+            
+            </div>
+            
+          
+         <!-- <div class="col-lg-8 col-md-8 col-xs-7 search"  ng-init="input='welcome'">
+            <div class="input-group " >
+              <input type="text" class="form-control" placeholder="Search for..." ng-model="searchtext" >
+              <span class="input-group-btn">
+                <a href="#!/search">
+                    <button class="btn btn-default" type="button" ng-click="input=searchtext">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </a>
+              </span>
+                {{input}}
+             </div>
+              
+           </div>-->
+           <div class="col-lg-8 col-md-8 col-xs-7 search" ng-controller="getAllMovies" ng-init="show=true">
+            <div class="input-group " >
+              <input type="text" class=" col-lg-7 col-md-7 col-xs-6 form-control"  placeholder="Search for..." ng-model="searchtext" ng-keyup=complete(searchtext) ng-keypress='show=display()' ng-focus='show=display()'>
+                  <span class="input-group-btn" >
+                   <div id="stop-search" ng-show='show'></div>
+
+                    <a href="#!/search/{{searchtext}}" ng-click="hidethis=true" >
+                        <button class="btn btn-default" type="button" >
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                      </a>
+                  </span>
+                             
+
+                 
+             </div>
+               <div>
+                  <ul class="list-group col-lg-7 col-md-7 col-xs-6 " ng-model="hidethis" ng-hide="hidethis" style="position: fixed" ng-mouseup='show=false'>  
+
+                         <li class="list-group-item" ng-repeat="categorydata in filterType" ng-click=fillTextbox(categorydata)>{{categorydata}} </li>  
+                    </ul>  
+               </div>
+           </div>
+            
+             
+         </div>
+       
+        <div class="menu-nav" ng-init="visible=true" ng-hide="visible">
+         <div>
+               <div type="button" class="menu" ng-click="visible=!visible" >
+                  <span class="glyphicon glyphicon glyphicon-align-justify" ></span>
+               </div>
+               <p class="logo2">
+               M<img src="images/unnamed.png">VIES
+               </p>
+        </div>
+            
+        <div id="head">
+            <ul>
+                <li class="item" ><a href="#!/"><img src="images/home-icon.png">Home</a></li>
+                <li ><img src="images/movies.svg" >Movies
+                   <ul style="font-size: 14px;margin-left: 13px;margin-top: 1px;">
+                       <a  href="#!/search/Action"><li class="item">Action</li></a>
+                       <a  href="#!/search/Comedy"><li class="item">Comedy</li></a>
+                       <a  href="#!/search/Sci-Fi"><li class="item">Sci-Fi</li></a>
+                       <a  href="#!/search/Drama"><li class="item">Drama</li></a>
+                       
+                        
+                    </ul>
+                
+                
+                </li>
+               
+            </ul> 
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="images/twitter-4-32.png"></li>
+                <li><img src="images/facebook-4-32.png"></li>
+                <li><img src="images/google-plus-4-32.png"></li>
+                <li><img src="images/github-9-32.png"></li>
+                
+               
+            </ul> 
+           <p style="color:#FFF">&copy; 2017 My Play All rights reserved | Design By Mahmoud Samir</p>
+        </div>
+        </div>
+        <div class="blur-body" ng-hide="visible" ng-click="visible=!visible">wlcome</div>
+        
+        
+       
+          <div ng-view></div>
+        
+       
+      
+    <!-- <div ng-controller='getAllMovies' class="container">
+        <ul ng-repeat="m in movies  |filter:input" class="movies">
+            <li>{{m.id}}</li>
+            <li>{{m.title}}</li>
+            <li>{{m.year}}</li>
+            <li>{{m.type}}</li>
+            <li>{{m.director}}</li>
+            <li>{{m.rating}}</li>
+            <li><img src="images/movies/{{m.img}}"></li>
+            <li>{{m.desc}}</li>
+         </ul>    
+        
+        
+    </div>-->
+        
+          <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootbox.min.js"></script>
+        
+        <script>
+        
+         (function(){
+            
+                var i=0;
+                setInterval(function(){
+                    if(i == 4) i=0;
+                     $('.body-bg').css({'background-image': 'url(images/'+ ++i+'.jpg)'})
+                },4000);
+              
+               
+                    
+
+                })();
+             $('#head .item').bind("click",function(){
+                   
+                    //remove all active
+                    $('#head .item').removeClass('color');
+
+
+                    //add active 
+                    $(this).addClass('color');
+
+             });
+              
+        </script>
+        
+    </body>
+</html>    
+
